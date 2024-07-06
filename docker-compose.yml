@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  nest-postgres-posts:
+    image: postgres:14
+    container_name: nest-postgres-posts
+    restart: always
+    ports:
+      - '5432:5432'
+    env_file:
+      - .env
+    volumes:
+      - nest-postgres-posts:/var/lib/postgresql/data
+
+volumes:
+  nest-postgres-posts:
+    name: nest-postgres-db
